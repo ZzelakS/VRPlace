@@ -12,7 +12,7 @@ export default function Home() {
           muted
           loop
           className="absolute inset-0 w-full h-full object-cover opacity-20"
-          src="src/assets/vr.mp4"
+          src="/vr.mp4"
         ></video>
         <motion.div
           initial={{ opacity: 0, y: 40 }}

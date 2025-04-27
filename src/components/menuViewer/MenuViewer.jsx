@@ -5,7 +5,7 @@ const FlipbookViewer = ({ flipbookUrl }) => {
     <div
       style={{
         position: "relative",
-        paddingTop: "0",
+        paddingTop: "20",
         width: "100%",
         height: "1100px",
       }}
