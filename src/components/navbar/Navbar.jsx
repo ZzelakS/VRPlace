@@ -1,0 +1,194 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react"; // small clean icon
+
+export default function Navbar() {
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Booking", path: "/booking" },
+    { name: "About", path: "/about" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
+    { name: "Admin", path: "/admin-login" },
+  ];
+
+  return (
+    <nav className="bg-black bg-opacity-80 fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 shadow-md">
+      <div className="text-neon font-bold text-2xl">VR Place</div>
+
+      {/* Hamburger Icon */}
+      <div
+        className="md:hidden text-cyber cursor-pointer z-50"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div
+          className={`w-8 h-1 bg-neon mb-1 transition-all duration-300 ${
+            isOpen ? "rotate-45 translate-y-2" : ""
+          }`}
+        />
+        <div
+          className={`w-8 h-1 bg-neon mb-1 transition-all duration-300 ${
+            isOpen ? "opacity-0" : ""
+          }`}
+        />
+        <div
+          className={`w-8 h-1 bg-neon transition-all duration-300 ${
+            isOpen ? "-rotate-45 -translate-y-2" : ""
+          }`}
+        />
+      </div>
+
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex space-x-6 items-center">
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <Link
+              to={item.path}
+              className={`text-gray-300 hover:text-cyber transition-colors duration-300 ${
+                location.pathname === item.path
+                  ? "text-cyber font-semibold"
+                  : ""
+              }`}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
+
+        {/* Dropdown Menu */}
+        <li className="relative">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex items-center gap-1 text-gray-300 hover:text-cyber transition-colors duration-300 bg-transparent border-none outline-none focus:outline-none active:outline-none"
+          >
+            Menu
+            <motion.span
+              animate={{ rotate: menuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ChevronDown size={18} />
+            </motion.span>
+          </button>
+
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.ul
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.3 }}
+                className="absolute top-10 right-0 bg-black bg-opacity-90 rounded-lg shadow-lg overflow-hidden"
+              >
+                <li>
+                  <Link
+                    to="/games-menu"
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-6 py-3 text-gray-300 hover:text-cyber hover:bg-zinc-800 transition"
+                  >
+                    Games Menu
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/food-menu"
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-6 py-3 text-gray-300 hover:text-cyber hover:bg-zinc-800 transition"
+                  >
+                    Food Menu
+                  </Link>
+                </li>
+              </motion.ul>
+            )}
+          </AnimatePresence>
+        </li>
+      </ul>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.ul
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="absolute top-20 left-0 right-0 bg-black bg-opacity-90 flex flex-col items-center space-y-6 py-8 md:hidden"
+          >
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-gray-300 hover:text-cyber text-xl transition-colors duration-300 ${
+                    location.pathname === item.path
+                      ? "text-cyber font-semibold"
+                      : ""
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+
+            {/* Mobile Dropdown */}
+            <li>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="flex items-center gap-1 text-gray-300 hover:text-cyber text-xl transition-colors duration-300 bg-transparent border-none outline-none focus:outline-none active:outline-none"
+              >
+                Menu
+                <motion.span
+                  animate={{ rotate: menuOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown size={20} />
+                </motion.span>
+              </button>
+
+              <AnimatePresence>
+                {menuOpen && (
+                  <motion.ul
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col items-center mt-4 space-y-4"
+                  >
+                    <li>
+                      <Link
+                        to="/games-menu"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setMenuOpen(false);
+                        }}
+                        className="text-gray-300 hover:text-cyber transition"
+                      >
+                        Games Menu
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/food-menu"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setMenuOpen(false);
+                        }}
+                        className="text-gray-300 hover:text-cyber transition"
+                      >
+                        Food Menu
+                      </Link>
+                    </li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}
