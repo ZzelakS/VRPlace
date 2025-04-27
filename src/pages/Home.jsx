@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="w-full min-h-screen min-w-0 bg-navy text-white overflow-x-hidden">
-
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center justify-center text-center px-6">
         <video
           autoPlay
           muted
           loop
+          playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
           src="/vr.mp4"
         ></video>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +54,9 @@ export default function Home() {
               className="bg-zinc-800 p-8 rounded-3xl shadow-lg border border-neon hover:shadow-neon transition-all duration-300 text-center"
             >
               <h3 className="text-2xl font-semibold text-neon mb-4">{game}</h3>
-              <p className="text-gray-400">Experience {game.toLowerCase()} like never before.</p>
+              <p className="text-gray-400">
+                Experience {game.toLowerCase()} like never before.
+              </p>
               <button className="mt-6 text-neon underline hover:text-neon">
                 Preview
               </button>
@@ -72,19 +76,23 @@ export default function Home() {
           ⚙️ How It Works
         </motion.h2>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16 text-center">
-          {["Choose Your Game", "Book a Time", "Enter the VR World"].map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.6 }}
-              className="max-w-xs"
-            >
-              <div className="text-6xl mb-6 text-neon">{i + 1}</div>
-              <h3 className="text-2xl font-semibold mb-3">{step}</h3>
-              <p className="text-gray-400">Simple. Fast. Fun. Get started in minutes.</p>
-            </motion.div>
-          ))}
+          {["Choose Your Game", "Book a Time", "Enter the VR World"].map(
+            (step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2, duration: 0.6 }}
+                className="max-w-xs"
+              >
+                <div className="text-6xl mb-6 text-neon">{i + 1}</div>
+                <h3 className="text-2xl font-semibold mb-3">{step}</h3>
+                <p className="text-gray-400">
+                  Simple. Fast. Fun. Get started in minutes.
+                </p>
+              </motion.div>
+            )
+          )}
         </div>
       </section>
 
@@ -96,8 +104,12 @@ export default function Home() {
           transition={{ duration: 0.7 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to play?</h2>
-          <p className="text-lg mb-8">The VR experience of a lifetime is waiting for you.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Ready to play?
+          </h2>
+          <p className="text-lg mb-8">
+            The VR experience of a lifetime is waiting for you.
+          </p>
           <Link to="/booking">
             <button className="bg-navy text-neon px-8 py-4 rounded-full text-lg hover:text-neon transition-all duration-300 shadow-md">
               Book Now
