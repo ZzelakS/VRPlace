@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import LogoCarousel from "../components/logoCarousel/LogoCarousel";
 
 export default function Home() {
   return (
@@ -65,6 +66,10 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 px-8 bg-navy">
+      <LogoCarousel />
+      </section>
+
       {/* How it Works */}
       <section className="py-24 px-8 bg-gradient-to-b from-navy via-zinc-900 to-dark">
         <motion.h2
@@ -120,7 +125,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-navy py-8 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} VC360 Gaming. All rights reserved.
+        © {new Date().getFullYear()} VR Place Nigeria. All rights reserved.
       </footer>
     </div>
   );

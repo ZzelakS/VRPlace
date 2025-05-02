@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react"; // small clean icon
+import logo from "../../assets/logo.png"
 
 export default function Navbar() {
   const location = useLocation();
@@ -18,8 +19,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-black bg-opacity-80 fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 shadow-md">
-      <div className="text-neon font-bold text-2xl">VR Place</div>
+    <nav className="bg-black bg-opacity-80 fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-4 pt-6 h-20 shadow-md">
+      <Link to="/" className="flex items-center h-full">
+  <img src={logo} alt="VR Place Logo" className="max-h-25 w-24 object-contain" />
+</Link>
+
 
       {/* Hamburger Icon */}
       <div
