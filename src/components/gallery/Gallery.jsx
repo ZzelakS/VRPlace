@@ -65,7 +65,7 @@ export default function Gallery() {
         <div className="mt-10 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="bg-cyber text-black font-semibold px-6 py-2 rounded-full hover:bg-cyber-dark transition"
+            className="bg-sky text-black font-semibold px-6 py-2 rounded-full hover:bg-sky-dark transition"
           >
             {showAll ? "See Less" : "See More"}
           </button>
