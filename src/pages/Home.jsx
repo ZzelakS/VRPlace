@@ -15,7 +15,7 @@ export default function Home() {
           playsInline
           preload="none"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
-          // src="/vr.mp4"
+          src="/vr.mp4"
         ></video>
 
         <motion.div
