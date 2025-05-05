@@ -19,7 +19,7 @@ export default function LogoCarousel() {
   useEffect(() => {
     const loop = async () => {
       while (true) {
-        await controls.start({ x: "-50%", transition: { duration: 5, ease: "linear" } });
+        await controls.start({ x: "-50%", transition: { duration: 20, ease: "linear" } });
         await controls.set({ x: 0 });
       }
     };
