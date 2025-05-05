@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LogoCarousel from "../components/logoCarousel/LogoCarousel";
-// import Gallery from "../components/gallery/Gallery";
+import Gallery from "../components/gallery/Gallery";
 
 export default function Home() {
   return (
@@ -86,7 +86,9 @@ export default function Home() {
       <LogoCarousel />
       </section>
 
-      {/* <Gallery/> */}
+      <section className="py-24 px-8 bg-navy">
+      <Gallery/>
+      </section>
 
       {/* How it Works */}
       <section className="py-24 px-8 bg-gradient-to-b from-navy via-zinc-900 to-dark">
