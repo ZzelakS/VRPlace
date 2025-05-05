@@ -11,11 +11,11 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Booking", path: "/booking" },
     { name: "About", path: "/about" },
-    { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
-    { name: "Admin", path: "/admin-login" },
+    { name: "Store", path: "/store" },
+    { name: "360 Tours", path: "/tours" },
+    // { name: "Admin", path: "/admin-login" },
   ];
 
   return (

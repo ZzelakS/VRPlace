@@ -46,7 +46,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl font-bold mb-14 text-center text-sky"
         >
-          🎮 Featured Games
+          Featured Games
         </motion.h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
@@ -73,7 +73,7 @@ export default function Home() {
                 {game.title}
               </h3>
               <p className="text-gray-400">
-                Experience {game.title} — fully immersive, totally unreal.
+                Experience the {game.title} — fully immersive, totally unreal.
               </p>
               <button className="mt-4 text-sky underline hover:text-sky">
                 Preview
