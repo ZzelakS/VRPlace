@@ -132,7 +132,7 @@ export default function Home() {
             Ready to play?
           </h2>
           <p className="text-lg mb-8">
-            The VR experience of a lifetime is waiting for you.
+            The VR experience of a lifetime awaits you.
           </p>
           <Link to="/booking">
             <button className="bg-navy text-sky px-8 py-4 rounded-full text-lg hover:text-sky transition-all duration-300 shadow-md">

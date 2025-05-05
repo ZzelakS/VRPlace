@@ -2,10 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/navbar/Navbar"; // adjust path if needed
 import Footer from "./components/footer/Footer"; // adjust path if needed
+import ChatbaseWidget from "./components/chatbaseWidget/ChatbaseWidget"; // adjust path if needed
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Store from "./pages/GiftCardStore";
 // import Tours from "./pages/Tours";
-// import About from "./pages/About";
-// import Store from "./pages/Store";
-// import Contact from "./pages/Contact";
 // import AdminLogin from "./pages/AdminLogin";
 // import GamesMenu from "./pages/GamesMenu"; // NEW
 // import FoodMenu from "./pages/FoodMenu"; // NEW
@@ -27,14 +28,14 @@ export default function App() {
           path="/games-menu"
           element={<FlipbookViewer flipbookUrl={gamesMenuUrl} />} // Passing URL to FlipbookViewer
         />
-        {/* <Route path="/tours" element={<Tours />} />
       <Route path="/about" element={<About />} />
-      <Route path="/store" element={<Store />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/store" element={<Store />} />
+        {/* <Route path="/tours" element={<Tours />} />
       <Route path="/admin-login" element={<AdminLogin />} /> */}
-      {/* <Route path="/games-menu" element={<GamesMenu />} /> */}
         {/* More pages later */}
       </Routes>
+      <ChatbaseWidget/>
       <Footer/>
     </>
   );
