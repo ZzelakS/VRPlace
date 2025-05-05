@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LogoCarousel from "../components/logoCarousel/LogoCarousel";
+// import Gallery from "../components/gallery/Gallery";
 
 export default function Home() {
   return (
@@ -48,27 +49,44 @@ export default function Home() {
           🎮 Featured Games
         </motion.h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-          {["Cyber Raid", "Zombie Escape", "VR Karting"].map((game, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-zinc-800 p-8 rounded-3xl shadow-lg border border-neon hover:shadow-neon transition-all duration-300 text-center"
-            >
-              <h3 className="text-2xl font-semibold text-neon mb-4">{game}</h3>
-              <p className="text-gray-400">
-                Experience {game.toLowerCase()} like never before.
-              </p>
-              <button className="mt-6 text-neon underline hover:text-neon">
-                Preview
-              </button>
-            </motion.div>
-          ))}
-        </div>
+  {[
+    { title: "9D Warzone", video: "/videos/warzone.mp4" },
+    { title: "VR Rollercoaster", video: "/videos/rollercoaster.mp4" },
+    { title: "Mixed Reality", video: "/mixed.mp4" },
+  ].map((game, index) => (
+    <motion.div
+      key={index}
+      whileHover={{ scale: 1.05 }}
+      className="bg-zinc-800 p-4 rounded-3xl shadow-lg border border-neon hover:shadow-neon transition-all duration-300 text-center overflow-hidden"
+    >
+      <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
+        <video
+          src={game.video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        ></video>
+      </div>
+      <h3 className="text-2xl font-semibold text-neon mb-2">{game.title}</h3>
+      <p className="text-gray-400">
+        Experience {game.title.toLowerCase()} like never before.
+      </p>
+      <button className="mt-4 text-neon underline hover:text-neon">
+        Preview
+      </button>
+    </motion.div>
+  ))}
+</div>
+
       </section>
 
       <section className="py-24 px-8 bg-navy">
       <LogoCarousel />
       </section>
+
+      {/* <Gallery/> */}
 
       {/* How it Works */}
       <section className="py-24 px-8 bg-gradient-to-b from-navy via-zinc-900 to-dark">

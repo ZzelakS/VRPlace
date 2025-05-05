@@ -1,5 +1,5 @@
-// components/LogoCarousel.jsx
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import granTurismo from "../../assets/gt.png";
 import playstation from "../../assets/ps.png";
 import eafc from "../../assets/fc.png";
@@ -14,17 +14,30 @@ import roblox from "../../assets/roblox.png";
 const logos = [granTurismo, playstation, eafc, fortnite, mortalKombat, cod, meta, epic, gta, roblox];
 
 export default function LogoCarousel() {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const loop = async () => {
+      while (true) {
+        await controls.start({ x: "-50%", transition: { duration: 5, ease: "linear" } });
+        await controls.set({ x: 0 });
+      }
+    };
+    loop();
+  }, [controls]);
+
   return (
-    <div className="relative overflow-hidden py-16">
-      {/* Fade effect */}
+    <div className="relative overflow-hidden py-16 cursor-grab active:cursor-grabbing">
+      {/* Fade sides */}
       <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-navy via-navy/70 to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-navy via-navy/70 to-transparent z-10 pointer-events-none" />
 
       <motion.div
-        className="flex gap-20 w-max animate-marquee"
-        initial={{ x: 0 }}
-        animate={{ x: "-50%" }}
-        transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+        className="flex gap-20 w-max"
+        animate={controls}
+        drag="x"
+        dragConstraints={{ left: -1000, right: 0 }}
+        dragElastic={0.1}
       >
         {[...logos, ...logos].map((logo, index) => (
           <img
