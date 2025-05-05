@@ -19,7 +19,9 @@ export default function LogoCarousel() {
   useEffect(() => {
     const loop = async () => {
       while (true) {
+        // Move the logos to the left continuously
         await controls.start({ x: "-50%", transition: { duration: 20, ease: "linear" } });
+        // Reset the logos to start position for the loop
         await controls.set({ x: 0 });
       }
     };
@@ -35,9 +37,6 @@ export default function LogoCarousel() {
       <motion.div
         className="flex gap-20 w-max"
         animate={controls}
-        drag="x"
-        dragConstraints={{ left: -1000, right: 0 }}
-        dragElastic={0.1}
       >
         {[...logos, ...logos].map((logo, index) => (
           <img
@@ -45,6 +44,7 @@ export default function LogoCarousel() {
             src={logo}
             alt={`logo-${index}`}
             className="h-20 w-23 object-contain opacity-80 hover:opacity-100 transition-opacity"
+            loading="lazy" // Lazy load the images
           />
         ))}
       </motion.div>
