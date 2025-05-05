@@ -27,7 +27,7 @@ export default function LogoCarousel() {
   }, [controls]);
 
   return (
-    <div className="relative overflow-hidden py-16 cursor-grab active:cursor-grabbing">
+    <div className="relative overflow-hidden py-8 cursor-grab active:cursor-grabbing">
       {/* Fade sides */}
       <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-navy via-navy/70 to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-navy via-navy/70 to-transparent z-10 pointer-events-none" />

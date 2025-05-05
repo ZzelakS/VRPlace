@@ -10,7 +10,8 @@ export default {
         dark: "#0a0a0a",
         neon: "#00f5ff",
         cyber: "#00ffea",
-        navy: "#0a0041"
+        navy: "#0a0041",
+        sky: "#0292db"
       },
       animation: {
         marquee: "marquee 20s linear infinite",

@@ -24,14 +24,14 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="relative z-10 max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-neon mb-6 leading-tight">
-            Welcome to <span className="text-neon">VR Place Nigeria!</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-sky mb-6 leading-tight">
+            Welcome to <span className="text-sky">VR Place Nigeria!</span>
           </h1>
           <p className="text-lg md:text-2xl mb-8 text-gray-300">
             Step into the future — immersive VR games, tournaments & more.
           </p>
           <Link to="/booking">
-            <button className="bg-neon text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-black hover:text-neon transition-all duration-300 shadow-lg">
+            <button className="bg-sky text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-black hover:text-sky transition-all duration-300 shadow-lg">
               Book a VR Session
             </button>
           </Link>
@@ -44,50 +44,49 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-14 text-center"
+          className="text-4xl md:text-5xl font-bold mb-14 text-center text-sky"
         >
           🎮 Featured Games
         </motion.h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-  {[
-    { title: "9D Warzone", video: "/9D.mp4" },
-    { title: "VR Rollercoaster", video: "/360.mp4" },
-    { title: "Mixed Reality", video: "/mixed.mp4" },
-  ].map((game, index) => (
-    <motion.div
-      key={index}
-      whileHover={{ scale: 1.05 }}
-      className="bg-zinc-800 p-4 rounded-3xl shadow-lg border border-neon hover:shadow-neon transition-all duration-300 text-center overflow-hidden"
-    >
-      <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
-        <video
-          src={game.video}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        ></video>
-      </div>
-      <h3 className="text-2xl font-semibold text-neon mb-2">{game.title}</h3>
-      <p className="text-gray-400">
-        Experience {game.title.toLowerCase()} like never before.
-      </p>
-      <button className="mt-4 text-neon underline hover:text-neon">
-        Preview
-      </button>
-    </motion.div>
-  ))}
-</div>
-
+          {[
+            { title: "9D Warzone", video: "/9D.mp4" },
+            { title: "VR Rollercoaster", video: "/360.mp4" },
+            { title: "Mixed Reality", video: "/mixed.mp4" },
+          ].map((game, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="bg-zinc-800 p-4 rounded-3xl shadow-lg border border-sky hover:shadow-sky transition-all duration-300 text-center overflow-hidden"
+            >
+              <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
+                <video
+                  src={game.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                ></video>
+              </div>
+              <h3 className="text-2xl font-semibold text-sky mb-2">
+                {game.title}
+              </h3>
+              <p className="text-gray-400">
+                Experience {game.title} — fully immersive, totally unreal.
+              </p>
+              <button className="mt-4 text-sky underline hover:text-sky">
+                Preview
+              </button>
+            </motion.div>
+          ))}
+        </div>
       </section>
-
       <section className="py-24 px-8 bg-navy">
-      <LogoCarousel />
+        <LogoCarousel />
       </section>
-
       <section className="py-24 px-8 bg-navy">
-      <Gallery/>
+        <Gallery />
       </section>
 
       {/* How it Works */}
@@ -96,9 +95,9 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-14 text-center"
+          className="text-4xl md:text-5xl font-bold mb-14 text-center text-sky"
         >
-          ⚙️ How It Works
+          How It Works
         </motion.h2>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-16 text-center">
           {["Choose Your Game", "Book a Time", "Enter the VR World"].map(
@@ -110,7 +109,7 @@ export default function Home() {
                 transition={{ delay: i * 0.2, duration: 0.6 }}
                 className="max-w-xs"
               >
-                <div className="text-6xl mb-6 text-neon">{i + 1}</div>
+                <div className="text-6xl mb-6 text-sky">{i + 1}</div>
                 <h3 className="text-2xl font-semibold mb-3">{step}</h3>
                 <p className="text-gray-400">
                   Simple. Fast. Fun. Get started in minutes.
@@ -122,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-neon text-navy text-center px-6">
+      <section className="py-20 bg-sky text-navy text-center px-6">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -136,17 +135,12 @@ export default function Home() {
             The VR experience of a lifetime is waiting for you.
           </p>
           <Link to="/booking">
-            <button className="bg-navy text-neon px-8 py-4 rounded-full text-lg hover:text-neon transition-all duration-300 shadow-md">
+            <button className="bg-navy text-sky px-8 py-4 rounded-full text-lg hover:text-sky transition-all duration-300 shadow-md">
               Book Now
             </button>
           </Link>
         </motion.div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-navy py-8 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} VR Place Nigeria. All rights reserved.
-      </footer>
     </div>
   );
 }

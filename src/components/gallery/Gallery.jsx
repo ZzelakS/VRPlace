@@ -30,13 +30,13 @@ export default function Gallery() {
   const displayedImages = isMobile && !showAll ? images.slice(0, 5) : images;
 
   return (
-    <section className="py-24 px-8 bg-navy">
+    <section className="py-18 px-8 bg-navy">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-5xl font-bold mb-14 text-center text-neon"
+        className="text-4xl md:text-5xl font-bold mb-14 text-center text-sky"
       >
         VR Experience Gallery
       </motion.h2>
@@ -49,7 +49,7 @@ export default function Gallery() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: index * 0.05, duration: 0.5 }}
-            className="overflow-hidden rounded-2xl shadow-lg border border-neon break-inside-avoid"
+            className="overflow-hidden rounded-2xl shadow-lg border border-sky break-inside-avoid"
           >
             <img
               src={src}

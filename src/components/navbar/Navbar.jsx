@@ -27,21 +27,21 @@ export default function Navbar() {
 
       {/* Hamburger Icon */}
       <div
-        className="md:hidden text-cyber cursor-pointer z-50"
+        className="md:hidden text-sky cursor-pointer z-50"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div
-          className={`w-8 h-1 bg-neon mb-1 transition-all duration-300 ${
+          className={`w-8 h-1 bg-sky mb-1 transition-all duration-300 ${
             isOpen ? "rotate-45 translate-y-2" : ""
           }`}
         />
         <div
-          className={`w-8 h-1 bg-neon mb-1 transition-all duration-300 ${
+          className={`w-8 h-1 bg-sky mb-1 transition-all duration-300 ${
             isOpen ? "opacity-0" : ""
           }`}
         />
         <div
-          className={`w-8 h-1 bg-neon transition-all duration-300 ${
+          className={`w-8 h-1 bg-sky transition-all duration-300 ${
             isOpen ? "-rotate-45 -translate-y-2" : ""
           }`}
         />
@@ -53,9 +53,9 @@ export default function Navbar() {
           <li key={index}>
             <Link
               to={item.path}
-              className={`text-gray-300 hover:text-cyber transition-colors duration-300 ${
+              className={`text-gray-300 hover:text-sky transition-colors duration-300 ${
                 location.pathname === item.path
-                  ? "text-cyber font-semibold"
+                  ? "text-sky font-semibold"
                   : ""
               }`}
             >
@@ -68,7 +68,7 @@ export default function Navbar() {
         <li className="relative">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="flex items-center gap-1 text-gray-300 hover:text-cyber transition-colors duration-300 bg-transparent border-none outline-none focus:outline-none active:outline-none"
+            className="flex items-center gap-1 text-gray-300 hover:text-sky transition-colors duration-300 bg-transparent border-none outline-none focus:outline-none active:outline-none"
           >
             Menu
             <motion.span
@@ -92,7 +92,7 @@ export default function Navbar() {
                   <Link
                     to="/games-menu"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-6 py-3 text-gray-300 hover:text-cyber hover:bg-zinc-800 transition"
+                    className="block px-6 py-3 text-sky-300 hover:text-sky hover:bg-zinc-800 transition"
                   >
                     Games Menu
                   </Link>
@@ -101,7 +101,7 @@ export default function Navbar() {
                   <Link
                     to="/food-menu"
                     onClick={() => setMenuOpen(false)}
-                    className="block px-6 py-3 text-gray-300 hover:text-cyber hover:bg-zinc-800 transition"
+                    className="block px-6 py-3 text-sky-300 hover:text-sky hover:bg-zinc-800 transition"
                   >
                     Food Menu
                   </Link>
@@ -127,9 +127,9 @@ export default function Navbar() {
                 <Link
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-gray-300 hover:text-cyber text-xl transition-colors duration-300 ${
+                  className={`text-sky-300 hover:text-sky text-xl transition-colors duration-300 ${
                     location.pathname === item.path
-                      ? "text-cyber font-semibold"
+                      ? "text-sky font-semibold"
                       : ""
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function Navbar() {
             <li>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="flex items-center gap-1 text-gray-300 hover:text-cyber text-xl transition-colors duration-300 bg-transparent border-none outline-none focus:outline-none active:outline-none"
+                className="flex items-center gap-1 text-sky-300 hover:text-sky text-xl transition-colors duration-300 bg-transparent border-none outline-none focus:outline-none active:outline-none"
               >
                 Menu
                 <motion.span
@@ -169,7 +169,7 @@ export default function Navbar() {
                           setIsOpen(false);
                           setMenuOpen(false);
                         }}
-                        className="text-gray-300 hover:text-cyber transition"
+                        className="text-sky-300 hover:text-sky transition"
                       >
                         Games Menu
                       </Link>
@@ -181,7 +181,7 @@ export default function Navbar() {
                           setIsOpen(false);
                           setMenuOpen(false);
                         }}
-                        className="text-gray-300 hover:text-cyber transition"
+                        className="text-sky-300 hover:text-sky transition"
                       >
                         Food Menu
                       </Link>

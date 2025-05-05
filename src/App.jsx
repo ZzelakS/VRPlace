@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/navbar/Navbar"; // adjust path if needed
+import Footer from "./components/footer/Footer"; // adjust path if needed
 // import Booking from "./pages/Booking";
 // import About from "./pages/About";
 // import Gallery from "./pages/Gallery";
@@ -29,6 +30,7 @@ export default function App() {
       {/* <Route path="/games-menu" element={<GamesMenu />} /> */}
         {/* More pages later */}
       </Routes>
+      <Footer/>
     </>
   );
 }
