@@ -117,32 +117,22 @@ export default function GiftCardStore() {
           <h2 className="text-2xl mb-4 font-bold text-sky">🛒 Your Cart</h2>
           <ul className="space-y-4 mb-6">
             {cart.map((item) => (
-              <li key={item.id} className="flex justify-between items-center">
-                <span>{item.description}</span>
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={() => decreaseQuantity(item.id)}
-                    className="text-sky hover:text-white"
-                  >
-                    <Minus size={18} />
-                  </button>
-                  <span>{item.quantity}</span>
-                  <button
-                    onClick={() => increaseQuantity(item.id)}
-                    className="text-sky hover:text-white"
-                  >
-                    <Plus size={18} />
-                  </button>
-                  <span className="ml-2">₦{(item.amount * item.quantity).toLocaleString()}</span>
-                  <button
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-red-500 hover:text-red-700"
-                    title="Remove"
-                  >
-                    <Trash2 size={18} />
-                  </button>
-                </div>
-              </li>
+              <li key={item.id} className="flex flex-wrap justify-between items-center gap-2">
+              <span className="truncate max-w-[120px]">{item.description}</span>
+              <div className="flex flex-wrap items-center gap-3 max-w-full">
+                <button onClick={() => decreaseQuantity(item.id)} className="text-sky hover:text-white">
+                  <Minus size={18} />
+                </button>
+                <span>{item.quantity}</span>
+                <button onClick={() => increaseQuantity(item.id)} className="text-sky hover:text-white">
+                  <Plus size={18} />
+                </button>
+                <span className="ml-2">₦{(item.amount * item.quantity).toLocaleString()}</span>
+                <button onClick={() => removeFromCart(item.id)} className="text-red-500 hover:text-red-700" title="Remove">
+                  <Trash2 size={18} />
+                </button>
+              </div>
+            </li>            
             ))}
           </ul>
 
