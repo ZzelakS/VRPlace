@@ -7,10 +7,10 @@ import HeroSection from "../components/heroSection/HeroSection";
 export default function Home() {
   return (
     <div className="w-full min-h-screen min-w-0 bg-navy text-white overflow-x-hidden">
-    {/* Hero Section */}
-  <section className="relative w-full min-h-screen flex items-center justify-center px-6">
-    <HeroSection />
-  </section>
+      {/* Hero Section */}
+      <section className="relative w-full min-h-screen flex items-center justify-center px-6">
+        <HeroSection />
+      </section>
 
       {/* Featured Games */}
       <section className="py-24 px-8 bg-navy">
@@ -83,7 +83,9 @@ export default function Home() {
                 transition={{ delay: i * 0.2, duration: 0.6 }}
                 className="max-w-xs"
               >
-                <div className="text-6xl mb-6 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">{i + 1}</div>
+                <div className="text-6xl mb-6 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
+                  {i + 1}
+                </div>
                 <h3 className="text-2xl font-semibold mb-3">{step}</h3>
                 <p className="text-gray-400">
                   Simple. Fast. Fun. Get started in minutes.
@@ -96,31 +98,34 @@ export default function Home() {
 
       {/* Call to Action */}
       <section
-  className="py-20 text-navy text-center px-6 bg-[url('/header.jpeg')] bg-cover bg-center bg-no-repeat bg-blend-overlay"
-  style={{
-    backgroundImage: ` url('/header.jpeg')`,
-  }}
->
-  <motion.div
-    initial={{ scale: 0.8, opacity: 0 }}
-    whileInView={{ scale: 1, opacity: 1 }}
-    transition={{ duration: 0.7 }}
-    className="max-w-3xl mx-auto"
-  >
-    <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
-      Ready to play?
-    </h2>
-    <p className="text-lg mb-8 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
-      The VR experience of a lifetime awaits you.
-    </p>
-    <Link to="/booking">
-      <button className="bg-navy text-sky px-8 py-4 rounded-full text-lg hover:bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] hover:text-navy transition-all duration-300 shadow-md">
-        Book Now
-      </button>
-    </Link>
-  </motion.div>
-</section>
-
+        className="py-20 text-navy text-center px-6 bg-[url('/header.jpeg')] bg-cover bg-center bg-no-repeat bg-blend-overlay"
+        style={{
+          backgroundImage: ` url('/header.jpeg')`,
+        }}
+      >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mx-auto"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
+            Ready to play?
+          </h2>
+          <p className="text-lg mb-8 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
+            The VR experience of a lifetime awaits you.
+          </p>
+          <a
+            href="https://wa.me/2349167417758?text=Hi%2C%20I'd%20like%20to%20book%20a%20VR%20session%20at%20VR%20Place%20Nigeria."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-navy text-sky px-8 py-4 rounded-full text-lg hover:bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] hover:text-navy transition-all duration-300 shadow-md">
+              Book Now
+            </button>
+          </a>
+        </motion.div>
+      </section>
     </div>
   );
 }
