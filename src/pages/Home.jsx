@@ -31,7 +31,7 @@ export default function Home() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-zinc-800 p-4 rounded-3xl shadow-lg border border-sky hover:shadow-sky transition-all duration-300 text-center overflow-hidden"
+              className="bg-zinc-800 p-4 rounded-3xl shadow-lg hover:shadow-sky transition-all duration-300 text-center overflow-hidden"
             >
               <div className="w-full h-48 mb-4 rounded-xl overflow-hidden">
                 <video
