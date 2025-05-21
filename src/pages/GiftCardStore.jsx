@@ -85,7 +85,7 @@ export default function GiftCardStore() {
 
   return (
     <div className="min-h-screen bg-navy text-white py-24 px-6 pt-36">
-      <h1 className="text-4xl font-bold text-center text-sky mb-12">
+      <h1 className="text-4xl font-bold text-center text-sky mb-12 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
         Buy VR Gift Cards
       </h1>
 
@@ -104,7 +104,7 @@ export default function GiftCardStore() {
             <p className="text-gray-400 mb-4">Use at VR Place Nigeria</p>
             <button
               onClick={() => addToCart(card)}
-              className="bg-sky text-black px-6 py-3 rounded-full font-semibold hover:bg-black hover:text-sky transition"
+              className="bg-sky text-black px-6 py-3 rounded-full font-semibold hover:bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] hover:text-black transition"
             >
               Buy Now
             </button>
