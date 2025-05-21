@@ -47,27 +47,32 @@ export default function Rentals() {
     {
       image: "/outdoor2.jpg",
       title: "VR Experience",
-      description: "Enjoy immersive adventures with VR Experience and a diverse selection of action-packed games.",
+      description:
+        "Enjoy immersive adventures with VR Experience and a diverse selection of action-packed games.",
     },
     {
       image: "/outdoor7.jpeg",
       title: "VR Kids",
-      description: "A fun-packed VR arcade just for kids, with exciting games and adventures!",
+      description:
+        "A fun-packed VR arcade just for kids, with exciting games and adventures!",
     },
     {
       image: "/outdoor1.jpg",
       title: "PlayStation 5",
-      description: "PS5 with EAFC, Mortal Kombat & more—great for parties and game nights.",
+      description:
+        "PS5 with EAFC, Mortal Kombat & more—great for parties and game nights.",
     },
     {
       image: "/about-vr1.jpeg",
       title: "VR Boxing",
-      description: "Step into the ring and throw punches in thrilling VR boxing matches.",
+      description:
+        "Step into the ring and throw punches in thrilling VR boxing matches.",
     },
     {
       image: "/outdoor8.jpeg",
       title: "Mixed Reality",
-      description: "VR Mixed Reality: The pro-level experience blending virtual and real worlds.",
+      description:
+        "VR Mixed Reality: The pro-level experience blending virtual and real worlds.",
     },
   ];
 
@@ -172,9 +177,11 @@ export default function Rentals() {
             </p>
             <div className="flex justify-center">
               <a
-                href={`/contact?game=${encodeURIComponent(
-                  vrGames[expandedGame].title
+                href={`https://wa.me/2349167417758?text=${encodeURIComponent(
+                  `Hi, I'm interested in booking the VR game: ${vrGames[expandedGame].title}`
                 )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-sky text-black font-bold py-2 px-6 rounded-full hover:bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] transition text-sm"
               >
                 Book Game
