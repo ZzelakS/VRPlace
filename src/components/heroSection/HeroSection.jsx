@@ -22,19 +22,20 @@ const featuredItems = [
   },
   {
     title: "Beat Saber",
-    description: "Journey to new galaxies in an immersive VR sim.",
+    description: "Slash through beats in rhythm to electrifying music!",
     video: "/beat.mp4",
     logo: "/beat.png",
-    tags: ["Adventure", "Sci-Fi", "Exploration", "VR"],
-    badge: "New",
+    tags: ["Rhythm", "Music", "Fitness", "Casual"],
+    badge: "Fan Favorite",
   },
   {
     title: "VR Boxing",
-    description: "Feel the speed. Drive the future.",
+    description:
+      "Step into the ring and throw real punches in this intense VR boxing simulator.",
     video: "/creed.mp4",
     logo: "/creed.jpg",
-    tags: ["Racing", "Arcade", "Multiplayer", "VR"],
-    badge: null,
+    tags: ["Sports", "Fitness", "Multiplayer", "VR"],
+    badge: "High Intensity",
   },
 ];
 
@@ -66,7 +67,7 @@ export default function HeroSection() {
             depth: 120,
             modifier: 2,
           }}
-          navigation={true}
+          // navigation={true}
           pagination={{ clickable: true }}
           autoplay={{
             delay: 3500,

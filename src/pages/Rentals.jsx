@@ -77,7 +77,7 @@ export default function Rentals() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-5xl md:text-6xl font-bold text-sky text-center mb-16"
+        className="text-5xl md:text-6xl font-bold text-sky text-center mb-16 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent"
       >
         VR Rentals for Every Occasion
       </motion.h1>
@@ -89,14 +89,14 @@ export default function Rentals() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.2, duration: 0.6 }}
-            className="bg-zinc-800 rounded-3xl shadow-lg p-6 border border-sky"
+            className="bg-zinc-800 rounded-3xl shadow-lg p-6"
           >
             <img
               src={pkg.image}
               alt={pkg.title}
               className="rounded-2xl w-full h-64 object-cover mb-6"
             />
-            <h2 className="text-2xl font-semibold text-sky mb-4">
+            <h2 className="text-2xl font-semibold text-sky mb-4 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
               {pkg.title}
             </h2>
             <ul className="list-disc pl-6 text-gray-300 space-y-2">
@@ -114,14 +114,14 @@ export default function Rentals() {
         transition={{ duration: 0.6 }}
         className="mt-24 max-w-6xl mx-auto"
       >
-        <h2 className="text-3xl font-semibold text-sky text-center mb-8">
+        <h2 className="text-3xl font-semibold text-sky text-center mb-8 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
           Available VR Games
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {vrGames.map((game, idx) => (
             <motion.div
               key={idx}
-              className="group relative bg-zinc-800 border border-sky rounded-2xl overflow-hidden cursor-pointer transition-all shadow-xl"
+              className="group relative bg-zinc-800 rounded-2xl overflow-hidden cursor-pointer transition-all shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() =>
@@ -175,7 +175,7 @@ export default function Rentals() {
                 href={`/contact?game=${encodeURIComponent(
                   vrGames[expandedGame].title
                 )}`}
-                className="inline-block bg-sky text-black font-bold py-2 px-6 rounded-full hover:bg-white transition text-sm"
+                className="inline-block bg-sky text-black font-bold py-2 px-6 rounded-full hover:bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] transition text-sm"
               >
                 Book Game
               </a>
@@ -195,7 +195,7 @@ export default function Rentals() {
         </h3>
         <a
           href="/contact"
-          className="inline-block bg-sky text-black font-bold py-3 px-6 rounded-full hover:bg-white transition"
+          className="inline-block bg-sky text-black font-bold py-3 px-6 rounded-full hover:bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] transition"
         >
           Contact Us Now
         </a>

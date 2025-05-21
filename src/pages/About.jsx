@@ -7,7 +7,7 @@ export default function About() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-5xl md:text-6xl font-bold text-sky text-center mb-12"
+        className="text-5xl md:text-6xl font-bold text-sky text-center mb-12 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent"
       >
         About VR Place Nigeria
       </motion.h1>
@@ -30,7 +30,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-semibold text-sky mb-4">
+          <h2 className="text-3xl font-semibold mb-4 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
             The Future of Entertainment
           </h2>
           <p className="text-gray-300 leading-relaxed">
@@ -46,7 +46,7 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="order-2 md:order-1"
         >
-          <h2 className="text-3xl font-semibold text-sky mb-4">
+          <h2 className="text-3xl font-semibold mb-4 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">
             What We Offer
           </h2>
           <ul className="text-gray-300 list-disc pl-6 leading-loose">
@@ -79,7 +79,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto mt-24 text-center"
       >
-        <h2 className="text-3xl font-semibold text-sky mb-4">Opening Hours</h2>
+        <h2 className="text-3xl font-semibold mb-4 bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent">Opening Hours</h2>
         <p className="text-gray-300 text-lg leading-loose">
           <strong>Mondays - Saturdays:</strong> 11:00 AM – 11:00 PM<br />
           <strong>Sundays:</strong> 12:00 PM – 11:00 PM

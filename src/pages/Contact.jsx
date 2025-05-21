@@ -8,7 +8,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-5xl font-bold mb-12 text-center text-sky"
+        className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-[#4f6af3] via-[#c654e1] to-[#f26c92] bg-clip-text text-transparent"
       >
         Contact VR Place Nigeria
       </motion.h1>
