@@ -21,22 +21,21 @@ const featuredItems = [
     badge: "Top Seller",
   },
   {
-    title: "Beat Saber",
-    description: "Slash through beats in rhythm to electrifying music!",
-    video: "/beat.mp4",
-    logo: "/beat.png",
-    tags: ["Rhythm", "Music", "Fitness", "Casual"],
-    badge: "Fan Favorite",
+  title: "Beat Saber",
+  description: "Slash through beats in rhythm to electrifying music!",
+  video: "/beat.mp4",
+  logo: "/beat.png",
+  tags: ["Rhythm", "Music", "Fitness", "Casual"],
+  badge: "Fan Favorite",
   },
   {
-    title: "VR Boxing",
-    description:
-      "Step into the ring and throw real punches in this intense VR boxing simulator.",
-    video: "/creed.mp4",
-    logo: "/creed.jpg",
-    tags: ["Sports", "Fitness", "Multiplayer", "VR"],
-    badge: "High Intensity",
-  },
+  title: "VR Boxing",
+  description: "Step into the ring and throw real punches in this intense VR boxing simulator.",
+  video: "/creed.mp4",
+  logo: "/creed.jpg",
+  tags: ["Sports", "Fitness", "Multiplayer", "VR"],
+  badge: "High Intensity",
+}
 ];
 
 export default function HeroSection() {

@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Store from "./pages/GiftCardStore";
 import Rentals from "./pages/Rentals";
+import Tour from "./pages/Video360";
 // import Tours from "./pages/Tours";
 // import AdminLogin from "./pages/AdminLogin";
 // import GamesMenu from "./pages/GamesMenu"; // NEW
@@ -35,6 +36,7 @@ export default function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/store" element={<Store />} />
       <Route path="/rentals" element={<Rentals />} />
+      <Route path="/tours" element={<Tour />} />
         {/* <Route path="/tours" element={<Tours />} />
       <Route path="/admin-login" element={<AdminLogin />} /> */}
         {/* More pages later */}
@@ -44,3 +46,4 @@ export default function App() {
     </>
   );
 }
+
