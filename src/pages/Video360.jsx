@@ -101,7 +101,7 @@ const Video360 = () => {
             playsInline
             preload="auto"
             crossOrigin="anonymous"
-            src="/Glo.mp4"
+            src="/Glo1.mp4"
           ></video>
         </a-assets>
 
