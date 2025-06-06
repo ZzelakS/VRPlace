@@ -3,35 +3,41 @@ import { useEffect, useState, useRef } from 'react';
 
 const Video360 = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const video = document.getElementById("vid");
+    const video = document.getElementById('vid');
+    if (!video) return;
 
-    const onCanPlay = () => {
+    const onUserClick = () => {
+      video.muted = true;
       video.play()
-        .then(() => setIsPlaying(true))
-        .catch(err => console.warn("Video play failed:", err));
+        .then(() => {
+          setIsPlaying(true);
+          setHasInteracted(true);
+        })
+        .catch((err) => {
+          console.warn('Video play failed:', err);
+        });
+
+      // Remove listener after first interaction
+      containerRef.current?.removeEventListener('click', onUserClick);
     };
 
-    if (video) {
-      video.addEventListener('canplaythrough', onCanPlay);
-    }
+    containerRef.current?.addEventListener('click', onUserClick);
 
     return () => {
-      if (video) {
-        video.removeEventListener('canplaythrough', onCanPlay);
-      }
+      containerRef.current?.removeEventListener('click', onUserClick);
     };
   }, []);
 
   const handlePlayPause = () => {
-    const video = document.getElementById("vid");
+    const video = document.getElementById('vid');
     if (video) {
       if (video.paused) {
-        video.play()
-          .then(() => setIsPlaying(true))
-          .catch(err => console.warn("Video play failed:", err));
+        video.play();
+        setIsPlaying(true);
       } else {
         video.pause();
         setIsPlaying(false);
@@ -48,22 +54,34 @@ const Video360 = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] border border-gray-400 rounded-md overflow-hidden" ref={containerRef}>
+    <div
+      ref={containerRef}
+      className="relative w-full h-[500px] border border-gray-400 rounded-md overflow-hidden"
+    >
+      {/* Overlay before user interaction */}
+      {!hasInteracted && (
+        <div className="absolute inset-0 z-20 bg-black bg-opacity-70 flex items-center justify-center text-white text-xl font-semibold cursor-pointer">
+          Click to Start 360 Video
+        </div>
+      )}
+
       {/* Controls */}
-      <div className="absolute bottom-4 right-4 z-10 flex gap-3">
-        <button
-          onClick={handlePlayPause}
-          className="bg-white text-black px-3 py-1 rounded shadow hover:bg-gray-200"
-        >
-          {isPlaying ? "Pause" : "Play"}
-        </button>
-        <button
-          onClick={enterFullscreen}
-          className="bg-white text-black px-3 py-1 rounded shadow hover:bg-gray-200"
-        >
-          Fullscreen
-        </button>
-      </div>
+      {hasInteracted && (
+        <div className="absolute bottom-4 right-4 z-10 flex gap-3">
+          <button
+            onClick={handlePlayPause}
+            className="bg-white text-black px-3 py-1 rounded shadow hover:bg-gray-200"
+          >
+            {isPlaying ? 'Pause' : 'Play'}
+          </button>
+          <button
+            onClick={enterFullscreen}
+            className="bg-white text-black px-3 py-1 rounded shadow hover:bg-gray-200"
+          >
+            Fullscreen
+          </button>
+        </div>
+      )}
 
       {/* A-Frame Scene */}
       <a-scene embedded className="w-full h-full">
@@ -74,9 +92,8 @@ const Video360 = () => {
             muted
             playsInline
             crossOrigin="anonymous"
-            preload="auto"
             src="/Glo.mp4"
-          />
+          ></video>
         </a-assets>
 
         <a-videosphere src="#vid"></a-videosphere>
