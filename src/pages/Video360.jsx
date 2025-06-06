@@ -12,16 +12,24 @@ const Video360 = () => {
 
     const onUserClick = () => {
       video.muted = true;
-      video.play()
-        .then(() => {
-          setIsPlaying(true);
-          setHasInteracted(true);
-        })
-        .catch((err) => {
-          console.warn('Video play failed:', err);
-        });
 
-      // Remove listener after first interaction
+      const tryPlay = () => {
+        video.play()
+          .then(() => {
+            setIsPlaying(true);
+            setHasInteracted(true);
+          })
+          .catch((err) => {
+            console.warn('Video play failed:', err);
+          });
+      };
+
+      if (video.readyState >= video.HAVE_ENOUGH_DATA) {
+        tryPlay();
+      } else {
+        video.addEventListener('canplaythrough', tryPlay, { once: true });
+      }
+
       containerRef.current?.removeEventListener('click', onUserClick);
     };
 
@@ -92,6 +100,8 @@ const Video360 = () => {
             muted
             playsInline
             crossOrigin="anonymous"
+            preload="auto"
+            autoPlay
             src="/Glo.mp4"
           ></video>
         </a-assets>
