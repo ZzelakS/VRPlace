@@ -2,29 +2,26 @@ import 'aframe';
 import { useEffect, useState, useRef } from 'react';
 
 const Video360 = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const handleSceneLoaded = () => {
-      const video = document.getElementById("vid");
-      if (video) {
-        video.muted = true;
-        video.play()
-          .then(() => setIsPlaying(true))
-          .catch(err => console.warn("Video play failed:", err));
-      }
+    const video = document.getElementById("vid");
+
+    const onCanPlay = () => {
+      video.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => console.warn("Video play failed:", err));
     };
 
-    const scene = document.querySelector("a-scene");
-    if (scene?.hasLoaded) {
-      handleSceneLoaded();
-    } else {
-      scene?.addEventListener("loaded", handleSceneLoaded);
+    if (video) {
+      video.addEventListener('canplaythrough', onCanPlay);
     }
 
     return () => {
-      scene?.removeEventListener("loaded", handleSceneLoaded);
+      if (video) {
+        video.removeEventListener('canplaythrough', onCanPlay);
+      }
     };
   }, []);
 
@@ -32,8 +29,9 @@ const Video360 = () => {
     const video = document.getElementById("vid");
     if (video) {
       if (video.paused) {
-        video.play();
-        setIsPlaying(true);
+        video.play()
+          .then(() => setIsPlaying(true))
+          .catch(err => console.warn("Video play failed:", err));
       } else {
         video.pause();
         setIsPlaying(false);
@@ -76,8 +74,9 @@ const Video360 = () => {
             muted
             playsInline
             crossOrigin="anonymous"
+            preload="auto"
             src="/Glo.mp4"
-          ></video>
+          />
         </a-assets>
 
         <a-videosphere src="#vid"></a-videosphere>
@@ -88,4 +87,3 @@ const Video360 = () => {
 };
 
 export default Video360;
-
