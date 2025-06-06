@@ -13,7 +13,7 @@ const Video360 = () => {
     const onUserClick = () => {
       video.muted = true;
 
-      const tryPlay = () => {
+      const startVideo = () => {
         video.play()
           .then(() => {
             setIsPlaying(true);
@@ -24,10 +24,10 @@ const Video360 = () => {
           });
       };
 
-      if (video.readyState >= video.HAVE_ENOUGH_DATA) {
-        tryPlay();
+      if (video.readyState >= 3) {
+        startVideo();
       } else {
-        video.addEventListener('canplaythrough', tryPlay, { once: true });
+        video.addEventListener('canplaythrough', startVideo, { once: true });
       }
 
       containerRef.current?.removeEventListener('click', onUserClick);
@@ -99,14 +99,13 @@ const Video360 = () => {
             loop
             muted
             playsInline
-            crossOrigin="anonymous"
             preload="auto"
-            autoPlay
+            crossOrigin="anonymous"
             src="/Glo.mp4"
           ></video>
         </a-assets>
 
-        <a-videosphere src="#vid"></a-videosphere>
+        <a-videosphere src="#vid" crossOrigin="anonymous"></a-videosphere>
         <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
       </a-scene>
     </div>
