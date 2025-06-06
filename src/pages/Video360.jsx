@@ -1,55 +1,51 @@
 import 'aframe';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Video360 = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const containerRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    const video = document.getElementById('vid');
-    if (!video) return;
+    const handleInteraction = () => {
+      const video = videoRef.current;
+      if (!video) return;
 
-    const onUserClick = () => {
       video.muted = true;
+      video.playsInline = true;
 
-      const startVideo = () => {
-        video.play()
-          .then(() => {
-            setIsPlaying(true);
-            setHasInteracted(true);
-          })
-          .catch((err) => {
-            console.warn('Video play failed:', err);
-          });
-      };
+      video.play()
+        .then(() => {
+          setIsPlaying(true);
+          setHasInteracted(true);
+        })
+        .catch((err) => {
+          console.warn('Video play failed:', err);
+        });
 
-      if (video.readyState >= 3) {
-        startVideo();
-      } else {
-        video.addEventListener('canplaythrough', startVideo, { once: true });
-      }
-
-      containerRef.current?.removeEventListener('click', onUserClick);
+      containerRef.current?.removeEventListener('click', handleInteraction);
     };
 
-    containerRef.current?.addEventListener('click', onUserClick);
+    containerRef.current?.addEventListener('click', handleInteraction, {
+      once: true,
+    });
 
     return () => {
-      containerRef.current?.removeEventListener('click', onUserClick);
+      containerRef.current?.removeEventListener('click', handleInteraction);
     };
   }, []);
 
   const handlePlayPause = () => {
-    const video = document.getElementById('vid');
-    if (video) {
-      if (video.paused) {
-        video.play();
-        setIsPlaying(true);
-      } else {
-        video.pause();
-        setIsPlaying(false);
-      }
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
     }
   };
 
@@ -69,7 +65,7 @@ const Video360 = () => {
       {/* Overlay before user interaction */}
       {!hasInteracted && (
         <div className="absolute inset-0 z-20 bg-black bg-opacity-70 flex items-center justify-center text-white text-xl font-semibold cursor-pointer">
-          Click to Start 360 Video
+          Tap to Start 360 Video
         </div>
       )}
 
@@ -96,6 +92,7 @@ const Video360 = () => {
         <a-assets>
           <video
             id="vid"
+            ref={videoRef}
             loop
             muted
             playsInline
