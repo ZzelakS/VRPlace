@@ -1,14 +1,15 @@
 {
-  "headers": [
-    {
-      "source": "/Glo.mp4",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Content-Type", "value": "video/mp4" }
-      ]
-    }
-  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": "text/html"
+        }
+      ],
+      "destination": "/index.html"
+    }
   ]
 }

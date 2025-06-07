@@ -24,9 +24,9 @@ export default function Home() {
         </motion.h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
-            { title: "9D Warzone", video: "/9D.mp4" },
-            { title: "VR Rollercoaster", video: "/360.mp4" },
-            { title: "Mixed Reality", video: "/mixed.mp4" },
+            { title: "9D Warzone", video: "/9D1.mp4" },
+            { title: "VR Rollercoaster", video: "/3601.mp4" },
+            { title: "Mixed Reality", video: "/mixed1.mp4" },
           ].map((game, index) => (
             <motion.div
               key={index}

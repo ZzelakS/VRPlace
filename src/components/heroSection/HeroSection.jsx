@@ -15,7 +15,7 @@ const featuredItems = [
   {
     title: "Walking Dead: Saints & Sinners VR",
     description: "Fight your way out of the apocalypse in VR.",
-    video: "/dead.mp4",
+    video: "/dead1.mp4",
     logo: "/dead.jpg",
     tags: ["Horror", "Shooter", "Multiplayer", "VR"],
     badge: "Top Seller",
@@ -23,15 +23,15 @@ const featuredItems = [
   {
   title: "Beat Saber",
   description: "Slash through beats in rhythm to electrifying music!",
-  video: "/beat.mp4",
+  video: "/beat1.mp4",
   logo: "/beat.png",
   tags: ["Rhythm", "Music", "Fitness", "Casual"],
   badge: "Fan Favorite",
   },
   {
   title: "VR Boxing",
-  description: "Step into the ring and throw real punches in this intense VR boxing simulator.",
-  video: "/creed.mp4",
+  description: "Step into the ring and throw real punches in this intense VR boxing simulator!",
+  video: "/creed1.mp4",
   logo: "/creed.jpg",
   tags: ["Sports", "Fitness", "Multiplayer", "VR"],
   badge: "High Intensity",
