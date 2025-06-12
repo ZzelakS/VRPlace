@@ -17,7 +17,7 @@ const Page3 = () => {
   useEffect(() => {
     pannellumInstance.current = pannellum.viewer(viewerRef.current, {
       type: "equirectangular",
-      panorama: "/360/3.jpg",
+      panorama: "/360/3.webp",
       autoLoad: true,
       autoRotate: 2,
       compass: true,
@@ -34,15 +34,15 @@ const Page3 = () => {
   createTooltipArgs: { text: "Entrance", path: "/page2", navigate },
 },
 {
-  pitch: -15, // from page3
-  yaw: -16,
+  pitch: -5, // from page3
+  yaw: -47,
   type: "custom",
   createTooltipFunc: hotspotLink,
   createTooltipArgs: { text: "Stage", path: "/page4", navigate },
 },
 {
-  pitch: -9, // from page4 (maps to page9)
-  yaw: 26,
+  pitch: -7, // from page4 (maps to page9)
+  yaw: 43,
   type: "custom",
   createTooltipFunc: hotspotLink,
   createTooltipArgs: { text: "Games", path: "/page5", navigate },

@@ -17,7 +17,7 @@ const Page11 = () => {
   useEffect(() => {
     pannellumInstance.current = pannellum.viewer(viewerRef.current, {
       type: "equirectangular",
-      panorama: "/360/11.jpg",
+      panorama: "/360/11.webp",
       autoLoad: true,
       autoRotate: 2,
       compass: true,
