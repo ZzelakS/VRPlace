@@ -34,7 +34,7 @@ const Page2 = () => {
           createTooltipArgs: { text: "Entrance", path: "/page1", navigate },
         },
         {
-          pitch: -14, // from page3
+          pitch: -14,
           yaw: -113,
           type: "custom",
           createTooltipFunc: hotspotLink,

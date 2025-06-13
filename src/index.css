@@ -138,3 +138,7 @@ button:focus-visible {
     opacity: 0;
   }
 }
+
+.pnlm-load-box {
+  display: none !important;
+}
