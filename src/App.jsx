@@ -17,18 +17,6 @@ import FlipbookViewer from "./components/menuViewer/MenuViewer";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import Page1 from "./pages/360/Page1";
 import Page2 from "./pages/360/Page2";
-import Page3 from "./pages/360/Page3";
-import Page4 from "./pages/360/Page4";
-import Page5 from "./pages/360/Page5";
-import Page6 from "./pages/360/Page6";
-import Page7 from "./pages/360/Page7";
-import Page8 from "./pages/360/Page8";
-import Page9 from "./pages/360/Page9";
-import Page10 from "./pages/360/Page10";
-import Page11 from "./pages/360/Page11";
-import Page12 from "./pages/360/Page12";
-import Page13 from "./pages/360/Page13";
-import Page14 from "./pages/360/Page14";
 
 export default function App() {
   const foodMenuUrl = "https://online.fliphtml5.com/gndyj/ryyz/"; // replace with your actual flipbook URL
@@ -53,20 +41,9 @@ export default function App() {
       <Route path="/rentals" element={<Rentals />} />
       <Route path="/tours" element={<Tour />} />
       <Route path="/360" element={<Glo />} />
-      <Route path="/page1" element={<Page1 />} />
-      <Route path="/page2" element={<Page2 />} />
-      <Route path="/page3" element={<Page3 />} />
-      <Route path="/page4" element={<Page4 />} />
-      <Route path="/page5" element={<Page5 />} />
-      <Route path="/page6" element={<Page6 />} />
-      <Route path="/page7" element={<Page7 />} />
-      <Route path="/page8" element={<Page8 />} />
-      <Route path="/page9" element={<Page9 />} />
-      <Route path="/page10" element={<Page10 />} />
-      <Route path="/page11" element={<Page11 />} />
-      <Route path="/page12" element={<Page12 />} />
-      <Route path="/page13" element={<Page13 />} />
-      <Route path="/page14" element={<Page14 />} />
+      <Route path="/vrtour" element={<Page1 />} />
+      <Route path="/glotour" element={<Page2 />} />
+      
         {/* <Route path="/tours" element={<Tours />} />
       <Route path="/admin-login" element={<AdminLogin />} /> */}
         {/* More pages later */}

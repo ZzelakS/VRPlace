@@ -14,29 +14,33 @@ export default function Tours() {
         Explore Our VR Tours
       </motion.h1>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-stretch">
         {/* Pannellum Tour */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-black/20 p-6 rounded-3xl shadow-lg border border-sky"
+          className="bg-black/20 p-6 rounded-3xl shadow-lg border border-sky flex flex-col h-[500px]"
         >
           <img
-            src="/360/11.jpg"
+            src="/360/1.jpg"
             alt="360 Walkaround"
-            className="rounded-2xl mb-4 w-full"
+            className="rounded-2xl mb-4 w-full h-48 object-cover"
           />
-          <h2 className="text-2xl font-semibold mb-2 text-sky">Virtual Showroom</h2>
-          <p className="text-gray-300 mb-4">
-            Take a walk through our immersive VR space using our interactive 360° viewer powered by Pannellum.
-          </p>
-          <Link
-            to="/page1"
-            className="inline-block bg-sky text-white px-6 py-2 rounded-full hover:bg-sky/80 transition"
-          >
-            Start Tour
-          </Link>
+          <div className="flex-1 flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold mb-2 text-sky">Virtual Showroom</h2>
+              <p className="text-gray-300 mb-4">
+                Take a walk through our immersive VR space.
+              </p>
+            </div>
+            <Link
+              to="/vrtour"
+              className="inline-block bg-sky text-white px-6 py-2 rounded-full hover:bg-sky/80 transition"
+            >
+              Start Tour
+            </Link>
+          </div>
         </motion.div>
 
         {/* 360° Video Tour */}
@@ -44,23 +48,27 @@ export default function Tours() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-black/20 p-6 rounded-3xl shadow-lg border border-sky"
+          className="bg-black/20 p-6 rounded-3xl shadow-lg border border-sky flex flex-col h-[500px]"
         >
           <img
-            // src="/tours/vrvideo-thumb.jpg"
+            src="/Glo/1.jpg"
             alt="360 Video Tour"
-            className="rounded-2xl mb-4 w-full"
+            className="rounded-2xl mb-4 w-full h-48 object-cover"
           />
-          <h2 className="text-2xl font-semibold mb-2 text-sky">360° Video Experience</h2>
-          <p className="text-gray-300 mb-4">
-            Watch a high-definition 360° video and experience the thrill of being inside our VR arena.
-          </p>
-          <Link
-            to="/vrvideo"
-            className="inline-block bg-sky text-white px-6 py-2 rounded-full hover:bg-sky/80 transition"
-          >
-            Watch Video
-          </Link>
+          <div className="flex-1 flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold mb-2 text-sky">360° Video Experience</h2>
+              <p className="text-gray-300 mb-4">
+                Watch a high-definition 360° video and experience the thrill of being inside our VR arena.
+              </p>
+            </div>
+            <Link
+              to="/glotour"
+              className="inline-block bg-sky text-white px-6 py-2 rounded-full hover:bg-sky/80 transition"
+            >
+              Start Tour
+            </Link>
+          </div>
         </motion.div>
       </div>
     </div>

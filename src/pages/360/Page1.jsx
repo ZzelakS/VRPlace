@@ -42,7 +42,7 @@ const scenes = [
         yaw: 150,
         type: "custom",
         text: "Entrance",
-        targetSceneId: "scene1",
+        targetSceneId: "entrance",
       },
       {
         pitch: -14,
@@ -453,6 +453,7 @@ const Page1 = () => {
       showZoomCtrl: true,
       showControlsOnHover: false,
       showLoading: false,
+      autoRotate: 2
     });
 
     // Preload initial next scene
