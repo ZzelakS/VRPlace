@@ -8,15 +8,15 @@ import Contact from "./pages/Contact";
 import Store from "./pages/GiftCardStore";
 import Rentals from "./pages/Rentals";
 import Tour from "./pages/Tours";
-import Glo from "./pages/Video360";
+// import Glo from "./pages/Video360";
 // import Tours from "./pages/Tours";
 // import AdminLogin from "./pages/AdminLogin";
 // import GamesMenu from "./pages/GamesMenu"; // NEW
 // import FoodMenu from "./pages/FoodMenu"; // NEW
 import FlipbookViewer from "./components/menuViewer/MenuViewer";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
-import Page1 from "./pages/360/Page1";
-import Page2 from "./pages/360/Page2";
+// import Page1 from "./pages/360/Page1";
+// import Page2 from "./pages/360/Page2";
 
 export default function App() {
   const foodMenuUrl = "https://online.fliphtml5.com/gndyj/ryyz/"; // replace with your actual flipbook URL
@@ -40,9 +40,9 @@ export default function App() {
       <Route path="/store" element={<Store />} />
       <Route path="/rentals" element={<Rentals />} />
       <Route path="/tours" element={<Tour />} />
-      <Route path="/360" element={<Glo />} />
-      <Route path="/vrtour" element={<Page1 />} />
-      <Route path="/glotour" element={<Page2 />} />
+      {/* <Route path="/360" element={<Glo />} /> */}
+      {/* <Route path="/vrtour" element={<Page1 />} />
+      <Route path="/glotour" element={<Page2 />} /> */}
       
         {/* <Route path="/tours" element={<Tours />} />
       <Route path="/admin-login" element={<AdminLogin />} /> */}
